@@ -12,7 +12,6 @@ import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import ContactPage from "./pages/contact-page/contactpage";
 import NotFoundPage from "./pages/NotFound/NotFound";
 import CheckOut from "./pages/checkOutpage.js/checkout";
-import Welcome from "./pages/first/Wellcome";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -44,7 +43,6 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/Shop-React-Js" component={Welcome} />
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route path="/checkout" component={CheckOut} />
