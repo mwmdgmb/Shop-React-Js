@@ -4,6 +4,8 @@ import FormInput from "../form-input/form-input";
 import CustomButton from "../custom-button/custom-button";
 import { auth, signInWithGoogle } from "../../firebase/firebase-utils";
 
+import Type from "../../assets/Type-Input.png";
+
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +33,14 @@ class SignIn extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+  handleChangeType = () => {
+    const Type = document.getElementById("Input-Type");
+    if (Type.type === "password") {
+      return (Type.type = "text");
+    } else if (Type.type === "text") {
+      return (Type.type = "password");
+    }
+  };
   render() {
     return (
       <div className="sign-in">
@@ -51,8 +61,12 @@ class SignIn extends Component {
             value={this.state.password}
             handleChange={this.handleChange}
             label="Password"
+            id="Input-Type"
             required
           />
+          <span className="type-input" onClick={this.handleChangeType}>
+            View Password
+          </span>
           <div className="btns">
             <CustomButton type="submit" value="Submit Form">
               SIGN IN
