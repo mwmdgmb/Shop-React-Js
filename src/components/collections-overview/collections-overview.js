@@ -1,8 +1,10 @@
 import React from "react";
 // redux react-redux
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 import { selectCollectionForPreview } from "../../redux/shop/shop-selector";
+
+// other module
+import { createStructuredSelector } from "reselect";
 
 // component
 import PreviewCollection from "../preview-collection/preview-collections";

@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 // root component
 import App from "./App";
+import ReactNotification from "react-notifications-component";
 
 // redux react-redux
 import { store, persistor } from "./redux/store";
@@ -14,6 +15,7 @@ import { PersistGate } from "redux-persist/integration/react";
 
 // style
 import "./index.css";
+import "react-notifications-component/dist/theme.css";
 
 // other
 import * as serviceWorker from "./serviceWorker";
@@ -22,6 +24,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <PersistGate persistor={persistor}>
+        <ReactNotification />
         <App />
       </PersistGate>
     </BrowserRouter>

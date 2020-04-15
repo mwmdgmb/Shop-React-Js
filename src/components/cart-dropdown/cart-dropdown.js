@@ -1,13 +1,22 @@
 import React from "react";
+
+// react-router-dom
 import { withRouter } from "react-router-dom";
+
+// redux react-redux
 import { connect } from "react-redux";
-import CustomButton from "../custom-button/custom-button";
-import "./cart-dropdown.styles.scss";
-import CartItem from "../cart-item/cart-item";
 import { selectCartItems } from "../../redux/cart/cart-selectors";
+import { toggleCartHidden } from "../../redux/cart/cart.action";
+
+// other module
 import { createStructuredSelector } from "reselect";
 
-import { toggleCartHidden } from "../../redux/cart/cart.action";
+// components
+import CustomButton from "../custom-button/custom-button";
+import CartItem from "../cart-item/cart-item";
+
+// style
+import "./cart-dropdown.styles.scss";
 
 const Cart = ({ cartItems, history, dispatch }) => {
   return (

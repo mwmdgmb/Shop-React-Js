@@ -1,8 +1,11 @@
 import React from "react";
 // redux react-redux
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 import { selectDirecSection } from "../../redux/directory/direc-selector";
+
+// other module
+import { createStructuredSelector } from "reselect";
+
 // component
 import MenuItem from "../menu-item/menu-item";
 // style

@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import FormInput from "../form-input/form-input";
-import CustomButton from "../custom-button/custom-button";
 
 // auth
 import { auth, createUserProfileDocument } from "../../firebase/firebase-utils";
 
+// components
+import FormInput from "../form-input/form-input";
+import CustomButton from "../custom-button/custom-button";
+
+// style
 import "./sign-up.styles.scss";
 
 export class SignUp extends Component {
@@ -48,11 +51,10 @@ export class SignUp extends Component {
   handleChange = e => {
     const { name, value } = e.target;
 
-
     this.setState({
-      [name]:value
-    })
-  }
+      [name]: value
+    });
+  };
 
   render() {
     const { displayName, email, password, confirmPassword } = this.state;

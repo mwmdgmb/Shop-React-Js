@@ -1,4 +1,6 @@
 import React from "react";
+
+// style
 import "./NotFound.style.scss";
 import NotFound from "../../assets/preview.png";
 
