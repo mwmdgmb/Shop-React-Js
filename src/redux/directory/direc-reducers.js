@@ -19,16 +19,17 @@ const INITIAL_STATE = {
       linkUrl: "shop/sneakers"
     },
     {
-      title: "womens",
+      title: "women",
       imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
       id: 4,
-      linkUrl: "shop/womens"
+      linkUrl: "shop/women"
     },
     {
-      title: "mens",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+      title: "men",
+      imageUrl:
+        "https://www.photographytalk.com/images/articles/2019/07/24/images/articles/2019/07/22/poses_for_men_back_lean.jpg",
       id: 5,
-      linkUrl: "shop/mens"
+      linkUrl: "shop/men"
     }
   ]
 };

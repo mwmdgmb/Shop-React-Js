@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 
 // react-router-dom
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -18,40 +18,32 @@ import ContactPage from "./pages/contact-page/contactpage";
 import NotFoundPage from "./pages/NotFound/NotFound";
 import CheckOut from "./pages/checkOutpage.js/checkout";
 
-class App extends Component {
-  unsubscribeFromAuth = null;
-
-  componentDidMount() {
-    const { checkUserSession } = this.props;
+const App = ({ checkUserSession, currentUser }) => {
+  useEffect(() => {
     checkUserSession();
-  }
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+  }, [checkUserSession]);
 
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/checkout" component={CheckOut} />
-          <Route exact path="/contact" component={ContactPage} />
-          <Route
-            exact
-            path="/sign"
-            render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
-            }
-          />
-          <Route path="/404" exact component={NotFoundPage} />
-          <Redirect from="*" to="/404" />
-        </Switch>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/shop" component={ShopPage} />
+        <Route path="/checkout" component={CheckOut} />
+        <Route exact path="/contact" component={ContactPage} />
+        <Route
+          exact
+          path="/sign"
+          render={() =>
+            currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+          }
+        />
+        <Route path="/404" exact component={NotFoundPage} />
+        <Redirect from="*" to="/404" />
+      </Switch>
+    </div>
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
